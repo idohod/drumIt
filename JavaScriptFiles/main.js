@@ -23,13 +23,13 @@ document.getElementById("playAgain").addEventListener('click', function () {
     toPauseAll = false;
 
     if (randomBeat == null || easyBeat == null) {
-        errorrMassage.innerHTML = "must enter BPM and chose level first!";
+        errorMessage.innerHTML = "must enter BPM and chose level first!";
         return;
     }
     else
-        errorrMassage.innerHTML = ''
+        errorMessage.innerHTML = ''
     if (!stillPlaying)
-        difficlty(level, true);
+        setDifficulty(level, true);
 });
 
 document.getElementById("beginner").addEventListener('click', function () {
@@ -37,7 +37,7 @@ document.getElementById("beginner").addEventListener('click', function () {
     toPauseAll = false;
 
     if (!stillPlaying)
-        difficlty(level, false);
+        setDifficulty(level, false);
 });
 
 document.getElementById("advance").addEventListener('click', function () {
@@ -45,7 +45,7 @@ document.getElementById("advance").addEventListener('click', function () {
     toPauseAll = false;
 
     if (!stillPlaying)
-        difficlty(level, false);
+        setDifficulty(level, false);
 });
 
 document.getElementById("expert").addEventListener('click', function () {
@@ -53,7 +53,7 @@ document.getElementById("expert").addEventListener('click', function () {
     toPauseAll = false;
 
     if (!stillPlaying)
-        difficlty(level, false);
+        setDifficulty(level, false);
 
 });
 
@@ -79,14 +79,14 @@ document.getElementById("clear").addEventListener('click', function () {
     input.value = 0;
 });
 //"MAIN"
-function difficlty(level, flag) {
+function setDifficulty(level, flag) {
 
     var BPM = getBMP();
     if (BPM == 0)
         return;
 
     if (level == "beginner")
-        var allFill = genBegginer();
+        var allFill = genBeginner();
     else
         var allFill = genAdvanceOrExpert();
 

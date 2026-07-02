@@ -6,7 +6,7 @@ const Tom2Element = document.getElementById("Tom2Audio");
 const FloorElement = document.getElementById("FloorAudio");
 const CrashElement = document.getElementById("CrashAudio");
 
-var errorrMassage = document.getElementById("errorMassage");
+var errorMessage = document.getElementById("errorMassage");
 var theMarker = document.getElementById("marker");
 
 var stillPlaying;
@@ -31,11 +31,11 @@ function getBMP() {
     var value = Number(input.value);
 
     if (value > 0) {
-        errorrMassage.innerHTML = ""
+        errorMessage.innerHTML = ""
         return 60000 / value;
     }
     else {
-        errorrMassage.innerHTML = "must enter BPM!"
+        errorMessage.innerHTML = "must enter BPM!"
         return 0;
     }
 }

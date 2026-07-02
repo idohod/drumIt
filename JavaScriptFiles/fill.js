@@ -3,8 +3,9 @@ var advanceFill;
 var expertFill;
 
 // generate fill by level
-function genBegginer() {
+function genBeginner() {
 
+    console.log("Generating beginner fill pattern");
     var fullTom1 = generate('Tom1container', 'Tom1', 'T1');
     var fullTom2 = generate('Tom2container', 'Tom2', 'T2');
     var fullSnare1 = generate('Snare1Container', 'Snare1', 'S');
@@ -32,17 +33,17 @@ function setFill(fullTom1, fullTom2, fullSnare1, fullFloor, level, flag) {
     }
 
     if (level == "beginner") {
-        FillResalt(easyFill, fullTom1, fullTom2, fullSnare1, fullFloor);
+        FillResult(easyFill, fullTom1, fullTom2, fullSnare1, fullFloor);
         return easyFill;
     }
     else if (level == "advance") {
 
-        FillResalt(advanceFill, fullTom1, fullTom2, fullSnare1, fullFloor);
+        FillResult(advanceFill, fullTom1, fullTom2, fullSnare1, fullFloor);
         return advanceFill;
     }
     else {
 
-        FillResalt(expertFill, fullTom1, fullTom2, fullSnare1, fullFloor);
+        FillResult(expertFill, fullTom1, fullTom2, fullSnare1, fullFloor);
         return expertFill;
     }
 }
@@ -106,7 +107,7 @@ function randFill() {
     }
     return randArray;
 }
-function FillResalt(checkedFill, fullTom1, fullTom2, fullSnare1, fullFloor) {
+function FillResult(checkedFill, fullTom1, fullTom2, fullSnare1, fullFloor) {
     for (let i = 0; i < SIZE; i++) {
 
         if (checkedFill[i] == 1) {
